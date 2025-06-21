@@ -1,4 +1,5 @@
-aiogram==3.7.0
-gspread
-oauth2client
+aiogram==3.20.0.post0
 aiohttp
+gspread
+google-auth
+oauth2client
