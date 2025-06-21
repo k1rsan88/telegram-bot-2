@@ -10,7 +10,7 @@ from aiohttp import web
 from aiogram.webhook.aiohttp_server import SimpleRequestHandler, setup_application
 
 from sheets import log_day
-from fsm import LogState
+<<<<<<< >>>>>>> f1673e1 (Update clean requirements and minor fix in main.py)
 
 API_TOKEN = os.getenv("TELEGRAM_TOKEN")
 bot = Bot(token=API_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
@@ -39,7 +39,20 @@ async def log_command(message: Message):
 
 # 🌐 Webhook-режим
 async def main():
+<<<<<<< HEAD
     await bot.set_webhook(f"{os.getenv('RENDER_EXTERNAL_URL')}/webhook")
+=======
+    await bot.delete_webhook(drop_pending_updates=True)
+    await from aiogram.webhook.aiohttp_server import SimpleRequestHandler, setup_application
+from aiohttp import web
+
+# в main():
+app = web.Application()
+SimpleRequestHandler(dispatcher=dp, bot=bot).register(app, path="/webhook")
+setup_application(app, dp, bot=bot)
+web.run_app(app, host="0.0.0.0", port=int(os.getenv("PORT", 8000)))
+(bot)
+>>>>>>> f1673e1 (Update clean requirements and minor fix in main.py)
 
     app = web.Application()
     SimpleRequestHandler(dispatcher=dp, bot=bot).register(app, path="/webhook")
