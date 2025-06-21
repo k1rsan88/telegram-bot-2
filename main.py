@@ -4,7 +4,7 @@ from aiogram import Bot, Dispatcher
 from aiogram.enums import ParseMode
 from handlers import router
 
-bot = Bot(token=os.getenv("TELEGRAM_TOKEN"), parse_mode=ParseMode.HTML)
+bot = Bot(token=os.getenv("TELEGRAM_TOKEN"), default=ParseMode.HTML)  # Исправлено здесь
 dp = Dispatcher()
 dp.include_router(router)
 
