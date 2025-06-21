@@ -11,7 +11,13 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Инициализация бота
-bot = Bot(token=os.getenv("TELEGRAM_TOKEN"), parse_mode=ParseMode.HTML)
+from aiogram.client.default import DefaultBotProperties
+
+bot = Bot(
+    token=os.getenv("TELEGRAM_TOKEN"),
+    default=DefaultBotProperties(parse_mode=ParseMode.HTML)
+)
+
 dp = Dispatcher(storage=MemoryStorage())
 dp.include_router(router)
 
