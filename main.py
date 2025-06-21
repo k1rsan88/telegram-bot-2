@@ -10,7 +10,7 @@ from aiohttp import web
 from aiogram.webhook.aiohttp_server import SimpleRequestHandler, setup_application
 
 from sheets import log_day
-<<<<<<< >>>>>>> f1673e1 (Update clean requirements and minor fix in main.py)
+ f1673e1 (Update clean requirements and minor fix in main.py)
 
 API_TOKEN = os.getenv("TELEGRAM_TOKEN")
 bot = Bot(token=API_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
