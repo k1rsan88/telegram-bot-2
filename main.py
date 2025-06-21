@@ -6,7 +6,7 @@ from aiogram.webhook.aiohttp_server import SimpleRequestHandler, setup_applicati
 from aiohttp import web
 from dotenv import load_dotenv
 
-from handlers import router  # Импортируй свои роутеры
+
 
 load_dotenv()
 
