@@ -5,6 +5,12 @@ from aiogram.fsm.storage.memory import MemoryStorage
 from aiogram.webhook.aiohttp_server import SimpleRequestHandler, setup_application
 from aiohttp import web
 from dotenv import load_dotenv
+from handlers import router  # ← Импортируй свой Router из handlers.py
+
+...
+
+dp.include_router(router)  # ← Убедись, что router определён
+
 
 
 
